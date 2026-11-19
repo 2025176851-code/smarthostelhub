@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Hub - UiTM Smart Campus Hostel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-page">
+
+  <aside class="app-sidebar" aria-label="Main sidebar">
+    <div class="sidebar-heading">
+      <a class="sidebar-brand" href="dashboard.html" title="Smart Hostel Hub">
+        <i class="bi bi-building"></i><span class="sidebar-label">Smart Hostel Hub</span>
+      </a>
+      <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse sidebar">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <a class="sidebar-link" href="dashboard.html" title="Homepage">
+        <i class="bi bi-house-door"></i><span class="sidebar-label">Homepage</span>
+      </a>
+      <a class="sidebar-link" href="complaints.html" title="Complaints Tracker">
+        <i class="bi bi-clipboard-check"></i><span class="sidebar-label">Complaints Tracker</span>
+      </a>
+      <a class="sidebar-link" href="rooms.html" title="Room Directory">
+        <i class="bi bi-door-open"></i><span class="sidebar-label">Room Directory</span>
+      </a>
+      <a class="sidebar-link active" href="analytics.html" aria-current="page" title="Analytics Hub">
+        <i class="bi bi-bar-chart-line"></i><span class="sidebar-label">Analytics Hub</span>
+      </a>
+    </nav>
+    <div class="sidebar-actions">
+      <button id="themeToggle" class="sidebar-link" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <i class="bi bi-moon-stars-fill" id="themeIcon"></i><span class="sidebar-label">Theme</span>
+      </button>
+      <button id="logoutBtn" class="sidebar-link" type="button" title="Logout">
+        <i class="bi bi-box-arrow-right"></i><span class="sidebar-label">Logout</span>
+      </button>
+    </div>
+  </aside>
+  <div class="app-content">
+
+  <main class="container my-4">
+    <h2 class="fw-bold mb-4">Asset Maintenance Analytics</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 class="fw-bold mb-3">Complaints by Category</h5>
+          <div class="chart-box">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 class="fw-bold mb-3">Block Resolution Comparison</h5>
+          <div class="chart-box">
+            <canvas id="resolutionChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-3 text-center mt-auto border-top border-secondary">
+    <small>&copy; 2026 Universiti Teknologi MARA (UiTM) | Kolej Jasmine Kampus Puncak Perdana</small>
+  </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

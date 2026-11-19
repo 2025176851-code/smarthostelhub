@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - UiTM Smart Campus Hostel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-page">
+
+  <aside class="app-sidebar" aria-label="Main sidebar">
+    <div class="sidebar-heading">
+      <a class="sidebar-brand" href="dashboard.html" title="Smart Hostel Hub">
+        <i class="bi bi-building"></i><span class="sidebar-label">Smart Hostel Hub</span>
+      </a>
+      <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse sidebar">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <a class="sidebar-link active" href="dashboard.html" aria-current="page" title="Homepage">
+        <i class="bi bi-house-door"></i><span class="sidebar-label">Homepage</span>
+      </a>
+      <a class="sidebar-link" href="complaints.html" title="Complaints Tracker">
+        <i class="bi bi-clipboard-check"></i><span class="sidebar-label">Complaints Tracker</span>
+      </a>
+      <a class="sidebar-link" href="rooms.html" title="Room Directory">
+        <i class="bi bi-door-open"></i><span class="sidebar-label">Room Directory</span>
+      </a>
+      <a class="sidebar-link" href="analytics.html" title="Analytics Hub">
+        <i class="bi bi-bar-chart-line"></i><span class="sidebar-label">Analytics Hub</span>
+      </a>
+    </nav>
+    <div class="sidebar-actions">
+      <button id="themeToggle" class="sidebar-link" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <i class="bi bi-moon-stars-fill" id="themeIcon"></i><span class="sidebar-label">Theme</span>
+      </button>
+      <button id="logoutBtn" class="sidebar-link" type="button" title="Logout">
+        <i class="bi bi-box-arrow-right"></i><span class="sidebar-label">Logout</span>
+      </button>
+    </div>
+  </aside>
+  <div class="app-content">
+
+  <!-- Main Content -->
+  <main class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+      <div>
+        <h2 class="fw-bold mb-1">Campus Hostel Operations</h2>
+        <p class="opacity-75 mb-0 pe-2">Overview of active tickets and facility maintenance.</p>
+      </div>
+      <a href="complaints.html" class="btn btn-purple dashboard-log-button text-nowrap flex-shrink-0" title="Log a new complaint">
+        <i class="bi bi-plus-circle"></i> Log Complaint
+      </a>
+    </div>
+
+    <!-- KPI Summary -->
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-3">
+        <div class="card p-3 border-start border-primary border-4 dashboard-kpi-card">
+          <span class="opacity-75 small">Total Complaints</span>
+          <h2 class="fw-bold my-1">42</h2>
+          <span class="text-success small"><i class="bi bi-arrow-up-short"></i> +5 this week</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 border-start border-warning border-4 dashboard-kpi-card">
+          <span class="opacity-75 small">Pending Action</span>
+          <h2 class="fw-bold my-1">8</h2>
+          <span class="text-warning small"><i class="bi bi-clock-history"></i> High priority</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 border-start border-success border-4 dashboard-kpi-card">
+          <span class="opacity-75 small">Resolved Tickets</span>
+          <h2 class="fw-bold my-1">34</h2>
+          <span class="text-success small"><i class="bi bi-check-circle"></i> 81% rate</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 border-start border-info border-4 dashboard-kpi-card">
+          <span class="opacity-75 small">Hostel Occupancy</span>
+          <h2 class="fw-bold my-1">92%</h2>
+          <span class="text-info small">1,240 / 1,350 Beds</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart & Noticeboard -->
+    <div class="row g-4">
+      <div class="col-md-8">
+        <div class="card p-4">
+          <h5 class="fw-bold mb-3">Maintenance Status Progress</h5>
+          <div class="chart-box">
+            <canvas id="overviewChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 h-100">
+          <h5 class="fw-bold mb-3">Campus Noticeboard</h5>
+          <div class="list-group list-group-flush">
+            <div class="list-group-item px-0 bg-transparent border-secondary">
+              <small class="text-custom-purple fw-bold">Block J4 Jasmine Water Inspection</small>
+              <p class="small opacity-75 mb-0">Scheduled tank maintenance on Saturday, 10 AM - 2 PM.</p>
+            </div>
+            <div class="list-group-item px-0 bg-transparent text-dark border-0">
+              <small class="text-custom-purple fw-bold">Wi-Fi Upgrade Notice</small>
+              <p class="small opacity-75 mb-0">Block J2 Jasmine router upgrades completed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-3 text-center mt-auto border-top border-secondary">
+    <small>&copy; 2026 Universiti Teknologi MARA (UiTM) | Kolej Jasmine Kampus Puncak Perdana</small>
+  </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
